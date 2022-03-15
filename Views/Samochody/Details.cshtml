@@ -1,0 +1,59 @@
+﻿@model myRemiza.Models.Samochody
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły samochodu</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Typ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Typ)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oznaczenie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oznaczenie)
+        </dd>
+        <dt class = "col-sm-2">
+            Numer rejestracyjny
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nr_rejestracyjny)
+        </dd>
+        <dt class = "col-sm-2">
+            Data pozyskania
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_pozyskania)
+        </dd>
+        <dt class = "col-sm-2">
+            Data kolejnego przeglądu
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Przeglad)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>

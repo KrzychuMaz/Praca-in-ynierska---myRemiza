@@ -1,0 +1,53 @@
+﻿@model myRemiza.Models.Strazacy
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Imie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Imie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nazwisko)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nazwisko)
+        </dd>
+        <dt class = "col-sm-2">
+            Data urodzenia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_urodzenia)
+        </dd>
+        <dt class = "col-sm-2">
+            Data wsąpienia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_wstapienia)
+        </dd>
+        <dt class = "col-sm-2">
+            Zaliczone kursy
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kursy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Odznaczenia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Odznaczenia)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>

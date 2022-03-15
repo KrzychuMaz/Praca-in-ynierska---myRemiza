@@ -1,0 +1,61 @@
+﻿@model myRemiza.Models.Wyjazdy
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Szczegóły wyjazdu</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Miejsce)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Miejsce)
+        </dd>
+
+        <dt class="col-sm-2">
+            Rodzaj zdarzenia
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rodzaj_zdarzenia.Nazwa)
+        </dd>
+        <dt class="col-sm-2">
+            Strażacy uczestniczący w akcji
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Strazacy)
+        </dd>
+        <dt class="col-sm-2">
+            Samochód bojwoy #1
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochody.Typ)
+        </dd>
+        <dt class="col-sm-2">
+            Samochód bojwoy #2
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Samochody.Typ)
+        </dd>
+        <dt class="col-sm-2">
+            Opis zdarzenia
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edytuj</a> |
+    <a asp-action="Index">Powrót</a>
+</div>

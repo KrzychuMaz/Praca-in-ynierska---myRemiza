@@ -1,0 +1,62 @@
+﻿@model myRemiza.Models.Samochody
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuń</h1>
+
+<h3>Jesteś pewien że chcesz usunąć ten samochód?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Typ)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Typ)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oznaczenie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oznaczenie)
+        </dd>
+        <dt class = "col-sm-2">
+            Numer rejestracyhny
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nr_rejestracyjny)
+        </dd>
+        <dt class = "col-sm-2">
+            Data pozyskania
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_pozyskania)
+        </dd>
+        <dt class = "col-sm-2">
+            Data kolejnego przeglądu
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Przeglad)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót</a>
+    </form>
+</div>

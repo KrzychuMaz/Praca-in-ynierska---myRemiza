@@ -1,0 +1,30 @@
+﻿@using myRemiza.Models
+@model List<myRemiza.Models.UserRolesViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Menedżer użytkowników</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Nazwa jednostki</th>
+            <th>Rola</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@user.Email</td>
+            <td>@user.Nazwa_jednostki</td>
+            <td>@string.Join(" , ", user.Roles.ToList())</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="UserRoles" asp-action="Manage" asp-route-userId="@user.UserId">Zarządzanie</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

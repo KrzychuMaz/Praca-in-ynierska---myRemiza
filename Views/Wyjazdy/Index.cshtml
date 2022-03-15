@@ -1,0 +1,54 @@
+﻿@model IEnumerable<myRemiza.Models.Wyjazdy>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wyjazdy bojowe</h1>
+
+<p>
+    <a asp-action="Create">Dodaj nowy</a>
+</p>
+<form asp-controller="Wyjazdy" asp-action="Index" method="get">
+    <p>
+        Znajdź wyjazd: <input type="text" name="SearchString" />
+        <input type="submit" value="Szukaj" />
+        <input type="submit" value="Powrót" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Data
+            </th>
+            <th>
+                Miejsce
+            </th>
+            <th>
+                Rodzaj zdarzenia
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miejsce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rodzaj_zdarzenia.Nazwa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

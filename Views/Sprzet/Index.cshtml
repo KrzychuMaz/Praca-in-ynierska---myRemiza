@@ -1,0 +1,66 @@
+﻿@model IEnumerable<myRemiza.Models.Sprzet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sprzęt należący do jeddnostki</h1>
+
+<p>
+    <a asp-action="Create">Dodaj nowy</a>
+</p>
+<form asp-controller="Sprzet" asp-action="Index" method="get">
+    <p>
+        Znajdź: <input type="text" name="SearchString" />
+        <input type="submit" value="Szukaj" />
+        <input type="submit" value="Powrót" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Firma)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rodzaj)
+            </th>
+            <th>
+                Numer seryjny
+            </th>
+            <th>
+                Data kolejnego przeglądu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rodzaj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nr_seryjny)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Przegladu)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
